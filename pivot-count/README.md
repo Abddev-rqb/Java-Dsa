@@ -1,43 +1,64 @@
-<h2>Peak Index in a Mountain Array</h2>
-<img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' />
-<hr>
-<p>You are given an integer <strong>mountain</strong> array <code>arr</code> of length <code>n</code> where the values increase to a <strong>peak element</strong> and then decrease.</p>
+## Peak Index in a Mountain Array
 
-<p>Return the index of the peak element.</p>
+![Difficulty: Medium](https://img.shields.io/badge/Difficulty-Medium-orange)
 
-<p>Your task is to solve it in <code>O(log(n))</code> time complexity.</p>
+### Problem Statement
+You are given an integer **mountain** array `nums` of length `n` where the values increase to a **peak element** and then decrease.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Return the index of the peak element.
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">arr = [0,1,0]</span></p>
+Your task is to solve it in **O(log(n))** time complexity.
 
-<p><strong>Output:</strong> <span class="example-io">1</span></p>
-</div>
+---
 
-<p><strong class="example">Example 2:</strong></p>
+### Function Signature
+```java
+class Solution {
+    public int peakE(int[] nums);
+    public int peakC(int[] nums);
+}
+```
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">arr = [0,2,1,0]</span></p>
+---
 
-<p><strong>Output:</strong> <span class="example-io">1</span></p>
-</div>
+### Example 1:
+**Input:**
+```java
+nums = [0,1,0]
+```
+**Output:**
+```java
+1
+```
 
-<p><strong class="example">Example 3:</strong></p>
+### Example 2:
+**Input:**
+```java
+nums = [0,2,1,0]
+```
+**Output:**
+```java
+1
+```
 
-<div class="example-block">
-<p><strong>Input:</strong> <span class="example-io">arr = [0,10,5,2]</span></p>
+### Example 3:
+**Input:**
+```java
+nums = [0,10,5,2]
+```
+**Output:**
+```java
+1
+```
 
-<p><strong>Output:</strong> <span class="example-io">1</span></p>
-</div>
+---
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+### Constraints
+- `3 <= nums.length <= 10^5`
+- `0 <= nums[i] <= 10^6`
+- `nums` is **guaranteed** to be a mountain array.
 
-<ul>
-	<li><code>3 &lt;= arr.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>0 &lt;= arr[i] &lt;= 10<sup>6</sup></code></li>
-	<li><code>arr</code> is <strong>guaranteed</strong> to be a mountain array.</li>
-</ul>
+---
 
+### Approach
+This solution uses **binary search** to efficiently find the peak element in **O(log n)** time. The function `peakE(nums)` identifies the index of the peak element by adjusting the search range based on whether the mid-value is greater than its neighbors. The function `peakC(nums)` returns the index of rotation, ensuring it remains within bounds.
